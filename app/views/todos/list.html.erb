@@ -1,28 +1,30 @@
-<h2>Realizados</h2>
 
-<% @todos_open.each do |todo| %>
-    <div class="card-deck">
+<h2>Realizado</h2>
+  <div class="card-deck">
+    <% @todos_open.each do |todo|%>
+      <div class="card">
         <%= image_tag todo.picture , class:'card-omg-top', 'height': '500px', 'width': '200px'%>
-        <div class="card">
-        
-        <%= todo.description %>
-        <%= todo.completed %> 
-        
+      <div class="card-body">
+            <p class="card-text"><%= todo.description %></p>
+            <p class="card-text"><%= todo.completed ? 'Realizado' : 'Pendiente' %></p>
+      </div>
     </div>
-    </div>
+    
+          
+
 <% end %>
 
-<h2>Pendientes</h2>
 
-<% @todos_close.each do |todo| %>
-    <div class="card-deck">
-    <%= image_tag todo.picture , class:'card-omg-top', 'height': '500px', 'width': '200px'%>
-    
-        <div class="card">
-        
-        <%= todo.description %>
-        <%= todo.completed %>
-        
+<h2>Pendiente</h2>
+  <div class="card-deck">
+    <% @todos_close.each do |todo|%>
+      <div class="card">
+        <%= image_tag todo.picture , class:'card-omg-top', 'height': '500px', 'width': '200px'%>
+      <div class="card-body">
+            <p class="card-text"><%= todo.description %></p>
+            <p class="card-text"><%= todo.completed ? 'Realizado' : 'Pendiente' %></p>
+      </div>
     </div>
-    </div>
+          
+
 <% end %>
